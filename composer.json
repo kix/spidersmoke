@@ -1,0 +1,31 @@
+{
+    "name": "kix/spidersmoke",
+    "description": "Spider for website smoke testing",
+    "authors": [
+        {
+            "name": "Stepan Anchugov",
+            "email": "kixxx1@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-0": {
+            "": "src/"
+        }
+    },
+    "require": {
+        "codeguy/arachnid": "1.*",
+        "symfony/console": "@stable",
+        "jakoch/phantomjs-installer": "1.9.x"
+    },
+    "config": {
+        "bin-dir": "bin"
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "PhantomInstaller\\Installer::installPhantomJS"
+        ],
+        "post-update-cmd": [
+            "PhantomInstaller\\Installer::installPhantomJS"
+        ]
+    }
+}
